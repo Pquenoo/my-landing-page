@@ -3,7 +3,7 @@
 :root {
   --fonte-title: "Turret Road", sans-serif;
   --fonte-sub-title: "Turret Road", sans-serif;
-  --background-page: url(img/backgroundcadastro.jpg);
+  --background-page: #505675;
   --background-nav: #A6A6A6;
   --background-serv: #505675;
   --fonte-p: "Jura", sans-serif;
@@ -103,7 +103,7 @@ main {
 }
 
 .container-cad {
-  background: rgba(255, 255, 255, 0.719);
+  background: rgba(255, 255, 255, 0.452);
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
