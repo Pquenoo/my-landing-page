@@ -164,3 +164,18 @@ font-size: 20px;
     margin-bottom: 0.5rem;
     line-height: 1.4;
   }
+
+  .botao-nav {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none; /* remove underline */
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.botao-nav:hover {
+    background-color: #0056b3;
+    color: #33ff00;
+}
