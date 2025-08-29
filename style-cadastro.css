@@ -150,5 +150,17 @@ main {
   transition: width 0.3s, background 0.3s;
 }
 
+.menu-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none; /* remove underline */
+    display: inline-block;
+    transition: 0.3s;
+}
 
-
+.menu-btn:hover {
+    background-color: #0056b3;
+    color: #33ff00;
+}
