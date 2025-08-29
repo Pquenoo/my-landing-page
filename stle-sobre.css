@@ -14,6 +14,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  margin: 0;
+  height: 100vh; /* ocupa 100% da altura da tela */
+  display: flex;
+  justify-content: center; /* centraliza na horizontal */
+  align-items: center;     /* centraliza na vertical */
+  background-color: #f9f9f9; /* opcional */
+}
+
 
 nav {
   display: flex;
@@ -46,7 +55,9 @@ nav ul {
   font-family: var(--fonte-sub-title);
   font-size: medium;
 }
+
 .menu-btn {
+    font-family: var(--fonte-p);
     background-color: #007bff;
     color: white;
     padding: 8px 15px;
@@ -61,88 +72,51 @@ nav ul {
     color: #33ff00;
 }
 
-
-html, body {
-  height: 100%;
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* fundo da página */
 }
 
-body {
-  background: var(--background-page); 
+.sobre-m .quadrado {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  position: relative;
+  width: 900px;
+  height: 600px;
+  background: #796249c0; /* quadrado de fundo */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.sobre-m .texto {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.sobre-m .texto h2 {
+  margin-bottom: 20px;
+  color: #ff9100;
   font-family: var(--fonte-p);
 }
 
-/* overlay escuro sobre o fundo */
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: -1;
+.sobre-m .texto p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #464444;
+  font-family: var(--fonte-p);
 }
 
-/* container central do cadastro */
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  padding-top: 80px; /* evita que o formulário suba por baixo da nav */
-}
-
-.container-cad {
-  background: rgba(255, 255, 255, 0.452);
-  padding: 30px;
+.sobre-m .foto img {
+  width: 250px;
+  height: 250px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  width: 350px;
-  text-align: center;
+  object-fit: cover;
 }
 
-.container-cad input,
-.container-cad button {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-}
-
-.container-cad button {
-  background: #0077ff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.container-cad button:hover {
-  background: #005fcc;
-}
-
-.senha-forca {
-  width: 100%;
-  height: 10px;
-  background: #ddd;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  overflow: hidden;
-}
-
-#barra-forca {
-  height: 100%;
-  width: 0%;
-  background: red;
-  border-radius: 5px;
-  transition: width 0.3s, background 0.3s;
-}
 
 
