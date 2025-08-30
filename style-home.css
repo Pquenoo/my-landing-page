@@ -1,181 +1,214 @@
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Turret+Road:wght@400;700&display=swap');
-:root{
---fonte-title: "Turret Road", sans-serif;
---fonte-sub-title: "Turret Road", sans-serif;
---background-page: #3F414B;
---background-nav: #A6A6A6;
---background-serv: #505675;
---fonte-p:"Jura", sans-serif;
+
+:root {
+  --fonte-title: "Turret Road", sans-serif;
+  --fonte-sub-title: "Turret Road", sans-serif;
+  --background-page: #505675;
+  --background-nav: #A6A6A6;
+  --background-serv: #1d347485;
+  --fonte-p: "Jura", sans-serif;
 }
 
-
+/* --- GERAL --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
-
+body {
   background-color: var(--background-page);
+  font-family: var(--fonte-p);
 }
 
-nav{
-display: flex;
-justify-content: space-between;
-margin: px;
-padding: 0;
-width:100%;
-height:80px ;
-background-color: var(--background-nav);
-}
-button {
-    background-color: #007bff;
-    color: rgb(255, 255, 255);
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
+/* --- NAV --- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--background-nav);
+  color: #fff;
+  padding: 15px 20px;
+  position: relative;
 }
 
-button:hover {
-    background-color: #0056b3;
-    color: #33ff00;
+nav .title h1 {
+  color: #1a1a1a;
+  font-family: var(--fonte-title);
+  font-weight: 700;
+  font-size: 22px;
 }
 
-nav ul{
-  padding-top: 0.7%;
-padding-right:6%;
-font-size:105%;
-display: flex;
-justify-content: center;
-list-style: none;
-gap: 60px;
-}
-
-.title {
-  padding-top: 0.2%;
-  font-size: 120%;
-  padding-left: 3%;
-  color: rgb(0, 0, 0);
-
-}
-.title h1{
-font-weight: 700;
-font-family: var(--fonte-title);  
-display: flex;
-justify-content:center;
-}
-.title p{
-  font-weight: 400;
+nav .title p {
   font-family: var(--fonte-sub-title);
-  
-  font-size: medium;
+  font-weight: 400;
+  font-size: 15px;
+  color:black;
 }
-header{
-padding: 40px;
-display: flex;
-justify-content: center;
-height: 407px;
-width: 100%;
 
-
+/* Menu desktop */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
 }
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #00bfff;
+}
+
+/* Botão hambúrguer */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+}
+
+/* --- HEADER --- */
+header {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
 .cabeçalho h2 {
-  font-family: var(--fonte-p);
   font-size: 26px;
- display: flex;
- justify-content: center;
- padding-top: 0.2%;
-
 }
-.cabeçalho p{
-font-family: var(--fonte-p);
-font-weight: 600;
-padding-top: 4%;
-font-size: 20px;
+.cabeçalho h3 {
+  font-size: 48px;
+  margin-top: 10px;
+}
+.cabeçalho p {
+  font-size: 18px;
+  margin-top: 15px;
 }
 
-.cabeçalho h3{
-  font-family: var(--fonte-p);
- display: flex;
- justify-content: center;
- padding-top: 2%;
- font-size: 48px;
-
+/* --- SERVIÇOS --- */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
- main {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+.servicos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.servico {
+  background-color: var(--background-serv);
+  border-radius: 12px;
+  padding: 1.5rem;
+  flex: 1 1 250px;
+  max-width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.servico:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.servico h3 {
+  color: #007acc;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+.servico p {
+  color: #acabab;
+  margin-bottom: 1rem;
+}
+.servico ul {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+}
+
+/* --- FOOTER --- */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 992px) {
+  nav ul {
+    gap: 20px;
   }
-
-  h2 {
-    font-family: var(--fonte-p);
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 2rem;
+  .cabeçalho h3 {
+    font-size: 36px;
   }
+}
 
-  .servicos-container {
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 5%;
+  }
+  .hamburger {
     display: flex;
-    flex-wrap: wrap; /* Permite quebrar em várias linhas em telas menores */
-    gap: 2rem; /* Espaço entre os cards */
-    justify-content: center; /* Centraliza os cards na tela */
   }
-
+  nav ul {
+    
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #1a1a1a;
+    width: 200px;
+    border-radius: 8px;
+    padding: 10px;
+  }
+  }
+  nav ul.show {
+    display: flex;
+  }
+  header {
+    flex-direction: column;
+  }
+  .cabeçalho h3 {
+    font-size: 28px;
+  }
+  .cabeçalho p {
+    font-size: 16px;
+  }
+  .servicos-container {
+    flex-direction: column;
+    align-items: center;
+  }
   .servico {
-    background-color: var(--background-serv);
-    border-radius: 12px;
-    padding: 1.5rem;
-    flex: 1 1 250px; /* Cresce, encolhe, tamanho base 250px */
-    max-width: 300px; /* Limita tamanho máximo do card */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 100%;
   }
-
-  .servico:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  }
-
-  .servico h3 {
-    font-family: var(--fonte-p);
-    color: #007acc;
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-  }
-
-  .servico p {
-    font-family: var(--fonte-p);
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #acabab;
-  }
-
-  .servico ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-  }
-
-  .servico li {
-    font-family: var(--fonte-p);
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
-  }
-
-  .botao-nav {
-    background-color: #007bff;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 5px;
-    text-decoration: none; /* remove underline */
-    display: inline-block;
-    transition: 0.3s;
 }
 
-.botao-nav:hover {
-    background-color: #0056b3;
-    color: #33ff00;
+@media (max-width: 480px) {
+  .title h1 {
+    font-size: 1.2rem;
+  }
+  .title p {
+    font-size: 0.8rem;
+  }
+  .cabeçalho h3 {
+    font-size: 22px;
+  }
+  nav ul li a,
+  nav ul li button {
+    font-size: 0.9rem;
+  }
 }

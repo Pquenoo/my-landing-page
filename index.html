@@ -1,102 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style-home.css">
     <meta name="description" content="Borba Tech - Soluções inteligentes em informática. Manutenção, montagem e otimização de computadores com qualidade e confiança.">
-
-    <title>Borba Tech - soluções inteligentes para seu computador</title>
-
+    <title>Borba Tech - Sobre Nós</title>
 </head>
-
 <body>
+
+    <!-- ================= NAV ================= -->
     <nav class="">
         <div class="title">
                 <h1>Borba Tech</h1>
-        <p>soluções inteligentes para seu computador!</p>
+                 <p>soluções inteligentes para seu computador!</p>
 
         </div>
-        
-        <ul>
-  <li><a href="index.html" class="botao-nav">Início</a></li>
-  <li><button class="Produtos">Produtos</button></li>
-  <li><a href="sobre.html" class="menu-btn">Sobre nós</a></li></li>
-  <li><button class="Entrar">Entrar</button></li>
-  <li><a href="cadastro.html" class="botao-nav">Cadastrar</a></li>
-</ul>
+        <!-- Botão hambúrguer -->
+<div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('show')">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+    <ul>
+  <li><a href="index.html" class="menu-btn">Início</a></li>
+  <li><a href="produtos.html" class="menu-btn">Produtos</a></li>
+  <li><a href="sobre.html" class="menu-btn">Sobre nós</a></li>
+  <li><a href="login.html" class="menu-btn">Entrar</a></li>
+  <li><a href="cadastro.html" class="menu-btn">Cadastrar</a></li>
+    </ul>
 
     </nav>
-<header>
-    <div class="cabeçalho">
-    <h2>sobre nós</h2>
-    <h3>Por que somos diferentes?</h3>
-    <p>Na Borba Tech, acreditamos que a tecnologia deve estar sempre ao seu lado para facilitar sua vida.<br>
-        Somos uma loja especializada em manutenção, montagem e otimização de computadores, oferecendo também acessórios e soluções personalizadas para cada cliente.
-        Nosso objetivo é entregar qualidade, confiança e suporte rápido, seja para quem usa o computador no dia a dia, para trabalho ou para games.
-        Com uma equipe apaixonada por tecnologia, cuidamos de cada detalhe para que você tenha a melhor experiência com seus equipamentos<br>
-        <br> <strong>Borba Tech, seu PC está em boas mãos!</strong> </p>
-    </div>
-</header>
-<main>
-  <h2>Nossos Serviços</h2>
-  <div class="servicos-container">
-    <section class="servico">
-      <h3>Manutenção de Computadores</h3>
-      <p>Garantimos que seu computador funcione de forma rápida e segura.</p>
-      <ul>
-        <li>Formatação e reinstalação de sistema operacional (Windows, Linux, etc.)</li>
-        <li>Limpeza física interna (remoção de poeira, troca de pasta térmica)</li>
-        <li>Troca e atualização de hardware (memória RAM, HD/SSD, placa de vídeo, fonte)</li>
-        <li>Diagnóstico de problemas (lentidão, travamentos, erros de inicialização)</li>
-        <li>Remoção de vírus, malwares e spywares</li>
-      </ul>
-    </section>
 
-    <section class="servico">
-      <h3>Montagem e Customização</h3>
-      <p>Montamos computadores sob medida para atender todas as suas necessidades.</p>
-      <ul>
-        <li>Montagem de computadores sob medida (gaming, escritório, edição de vídeo)</li>
-        <li>Configuração de computadores novos</li>
-        <li>Atualização de PCs antigos</li>
-      </ul>
-    </section>
+    <!-- ================= HEADER / SOBRE ================= -->
+    <header>
+        <div class="cabeçalho">
+            <h2>Sobre Nós</h2>
+            <h3>Por que somos diferentes?</h3>
+            <p>
+                Na Borba Tech, acreditamos que a tecnologia deve estar sempre ao seu lado para facilitar sua vida.<br>
+                Somos uma loja especializada em manutenção, montagem e otimização de computadores, oferecendo também acessórios e soluções personalizadas para cada cliente.
+                Nosso objetivo é entregar qualidade, confiança e suporte rápido, seja para quem usa o computador no dia a dia, para trabalho ou para games.<br>
+                <br> <strong>Borba Tech, seu PC está em boas mãos!</strong>
+            </p>
+        </div>
+    </header>
 
-    <section class="servico">
-      <h3>Suporte de Software</h3>
-      <p>Instalação e configuração de softwares para otimizar seu desempenho.</p>
-      <ul>
-        <li>Instalação de programas e drivers</li>
-        <li>Configuração de antivírus, firewall e backups</li>
-        <li>Configuração de impressoras, scanners e outros periféricos</li>
-        <li>Otimização de sistemas para melhorar desempenho</li>
-      </ul>
-    </section>
+    <!-- ================= SERVIÇOS ================= -->
+    <main>
+        <h2>Nossos Serviços</h2>
+        <div class="servicos-container">
+            <section class="servico">
+                <h3>Manutenção de Computadores</h3>
+                <p>Garantimos que seu computador funcione de forma rápida e segura.</p>
+                <ul>
+                    <li>Formatação e reinstalação de sistema operacional (Windows, Linux, etc.)</li>
+                    <li>Limpeza física interna (remoção de poeira, troca de pasta térmica)</li>
+                    <li>Troca e atualização de hardware (memória RAM, HD/SSD, placa de vídeo, fonte)</li>
+                    <li>Diagnóstico de problemas (lentidão, travamentos, erros de inicialização)</li>
+                    <li>Remoção de vírus, malwares e spywares</li>
+                </ul>
+            </section>
 
-    <section class="servico">
-      <h3>Serviços Especiais</h3>
-      <p>Consultoria e soluções especiais para empresas e usuários avançados.</p>
-      <ul>
-        <li>Criação de contas de e-mail, backup em nuvem e sincronização</li>
-        <li>Consultoria para upgrades e melhorias de performance</li>
-        <li>Criação de sites e páginas para empresas</li>
-      </ul>
-    </section>
-  </div>
-  
-  <footer>
-    <p>&copy; 2025 Borba Tech - Todos os direitos reservados.</p>
-  </footer>
-</main>
+            <section class="servico">
+                <h3>Montagem e Customização</h3>
+                <p>Montamos computadores sob medida para atender todas as suas necessidades.</p>
+                <ul>
+                    <li>Montagem de computadores sob medida (gaming, escritório, edição de vídeo)</li>
+                    <li>Configuração de computadores novos</li>
+                    <li>Atualização de PCs antigos</li>
+                </ul>
+            </section>
 
+            <section class="servico">
+                <h3>Suporte de Software</h3>
+                <p>Instalação e configuração de softwares para otimizar seu desempenho.</p>
+                <ul>
+                    <li>Instalação de programas e drivers</li>
+                    <li>Configuração de antivírus, firewall e backups</li>
+                    <li>Configuração de impressoras, scanners e outros periféricos</li>
+                    <li>Otimização de sistemas para melhorar desempenho</li>
+                </ul>
+            </section>
 
+            <section class="servico">
+                <h3>Serviços Especiais</h3>
+                <p>Consultoria e soluções especiais para empresas e usuários avançados.</p>
+                <ul>
+                    <li>Criação de contas de e-mail, backup em nuvem e sincronização</li>
+                    <li>Consultoria para upgrades e melhorias de performance</li>
+                    <li>Criação de sites e páginas para empresas</li>
+                </ul>
+            </section>
+        </div>
 
+        <footer>
+            <p>&copy; 2025 Borba Tech - Todos os direitos reservados.</p>
+        </footer>
+    </main>
 
-
-
-    
 </body>
 </html>

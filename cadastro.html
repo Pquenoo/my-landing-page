@@ -1,59 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style-cadastro.css">
+    <link rel="stylesheet" href="style-cadastro.css">
+    <link rel="stylesheet" href="index1.js">
     <title>Crie sua conta | Borba Tech</title>
-
 </head>
-
 <body>
 
-    <nav class="">
+    <!-- ================= NAV ================= -->
+    <nav>
         <div class="title">
-                <h1>Borba Tech</h1>
-        <p>soluções inteligentes para seu computador!</p>
-
+            <h1>Borba Tech</h1>
+            <p>Soluções inteligentes para seu computador!</p>
         </div>
-        
-        <ul>
-  <li><a href="index.html" class="menu-btn">Início</a></li>
-  <li><a href="produtos.html" class="menu-btn">Produtos</a></li>
-  <li><a href="sobre.html" class="menu-btn">Sobre nós</a></li>
-  <li><a href="login.html" class="menu-btn">Entrar</a></li>
-  <li><a href="cadastro.html" class="botao-nav">Cadastrar</a></li>
-  
-</ul>
 
+        <!-- Botão hambúrguer -->
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul>
+            <li><a href="index.html" class="menu-btn">Início</a></li>
+            <li><a href="produtos.html" class="menu-btn">Produtos</a></li>
+            <li><a href="sobre.html" class="menu-btn">Sobre nós</a></li>
+            <li><a href="login.html" class="menu-btn">Entrar</a></li>
+            <li><a href="cadastro.html" class="menu-btn">Cadastrar</a></li>
+        </ul>
     </nav>
 
-
+    <!-- ================= FORMULÁRIO ================= -->
     <main>
-
         <div class="container-cad">
-             <h1>Cadastro</h1>
-  <form>
-
-    <input type="text" placeholder="Nome"><br>
-    <input type="text" placeholder="Sobre Nome"><br>
-    <input type="email" placeholder="Email"><br>
-    <input type="password" placeholder="Senha"><br>
-    <div class="senha-forca">
-    <div id="barra-forca"></div>
-    </div>
-    <input type="password" placeholder="confirmação de senha"><br>
-    <button type="submit">Cadastrar</button>
-    
-  </form>
-
-
+            <h1>Cadastro</h1>
+            <form>
+                <input type="text" placeholder="Nome">
+                <input type="text" placeholder="Sobrenome">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Senha">
+                <div class="senha-forca">
+                    <div id="barra-forca"></div>
+                </div>
+                <input type="password" placeholder="Confirmação de senha">
+                <button type="submit">Cadastrar</button>
+            </form>
         </div>
-
     </main>
 
-<script src="index1.js"></script>
+    <script src="index1.js"></script>
 </body>
-
 </html>
