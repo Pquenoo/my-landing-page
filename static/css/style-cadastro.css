@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Turret+Road:wght@400;700&display=swap');
+
+:root {
+  --fonte-title: "Turret Road", sans-serif;
+  --fonte-sub-title: "Turret Road", sans-serif;
+  --background-page: #505675;
+  --background-nav: #A6A6A6;
+  --background-serv: #505675;
+  --fonte-p: "Jura", sans-serif;
+  --cor-primaria: #0077ff;
+  --cor-hover: #005fcc;
+}
+
+/* ===== Reset e base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--fonte-p);
+}
+
+/* ===== Fundo e overlay ===== */
+body {
+  background: linear-gradient(120deg, #505675, #7f8caa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+  z-index: 0;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+  width: 100%;
+  height: 80px;
+  background-color: var(--background-nav);
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+nav ul {
+  font-size: 105%;
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+nav ul.show {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--background-nav);
+  padding: 15px 0;
+  gap: 15px;
+  text-align: center;
+}
+
+.title h1 {
+  font-weight: 700;
+  font-family: var(--fonte-title);
+}
+
+.title p {
+  font-weight: 400;
+  font-family: var(--fonte-sub-title);
+  font-size: medium;
+}
+
+.menu-btn {
+  background-color: var(--cor-primaria);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
+}
+.menu-btn:hover {
+  background-color: var(--cor-hover);
+  color: #fff;
+}
+
+/* --- MENU HAMBURGER --- */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: rgba(47, 0, 255, 0.45);
+  border-radius: 3px;
+}
+
+/* ===== MAIN / FORMULARIO ===== */
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.container-cad {
+  background: rgba(255, 255, 255, 0.336);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  width: 350px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeIn 0.6s forwards;
+  transition: transform 0.3s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Título ===== */
+.container-cad h1 {
+  color: var(--cor-primaria);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+/* ===== Inputs ===== */
+.container-cad input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.container-cad input:focus {
+  border-color: var(--cor-primaria);
+  outline: none;
+  box-shadow: 0 0 5px rgba(0,119,255,0.4);
+}
+
+/* ===== Botão ===== */
+.container-cad button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--cor-primaria);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.container-cad button:hover {
+  background-color: var(--cor-hover);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+
+/* ===== Barra de força da senha ===== */
+.senha-forca {
+  width: 100%;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+#barra-forca {
+  height: 100%;
+  width: 0%;
+  background: red;
+  border-radius: 5px;
+  transition: width 0.3s, background 0.3s;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 992px) {
+  nav ul {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 5%;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  nav ul {
+    display: none;
+  }
+  nav ul.show {
+    display: flex;
+  }
+  .container-cad {
+    width: 90%;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title h1 {
+    font-size: 1.2rem;
+  }
+  .title p {
+    font-size: 0.8rem;
+  }
+  nav ul li a {
+    font-size: 0.9rem;
+  }
+  .container-cad {
+    padding: 20px;
+  }
+}
+/* Container do fundo */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* atrás do formulário */
+  overflow: hidden;
+  background: linear-gradient(to top, #87ceeb 0%, #f0f8ff 100%);
+}
+
+/* Montanhas simples */
+.mountains {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 30%;
+  background: linear-gradient(#556b2f, #6b8e23);
+  clip-path: polygon(0% 100%, 20% 60%, 40% 100%, 60% 50%, 80% 100%, 100% 40%, 100% 100%, 0% 100%);
+  animation: mountainsMove 60s linear infinite;
+}
+
+@keyframes mountainsMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Nuvens */
+.cloud {
+  position: absolute;
+  top: 20%;
+  width: 150px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  width: 100px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.cloud::before {
+  top: -20px;
+  left: 10px;
+}
+
+.cloud::after {
+  top: -10px;
+  right: 10px;
+}
+
+/* Animação das nuvens */
+.cloud1 {
+  left: -200px;
+  animation: cloudMove 120s linear infinite;
+}
+
+.cloud2 {
+  top: 35%;
+  left: -300px;
+  width: 200px;
+  height: 80px;
+  animation: cloudMove 180s linear infinite;
+}
+
+@keyframes cloudMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(120vw); }
+}
