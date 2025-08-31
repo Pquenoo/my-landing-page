@@ -243,3 +243,8 @@ nav ul li a:hover {
   0% { transform: translateX(0); }
   100% { transform: translateX(120vw); }
 }
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #000000;
+}
