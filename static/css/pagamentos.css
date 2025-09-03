@@ -1,0 +1,114 @@
+/* Estilo geral */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  color: white;
+  margin: 0;
+}
+
+/* Container principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+}
+
+/* Cartão */
+.cartao {
+  width: 100%;
+  max-width: 320px; /* largura */
+  height: 200px;    /* altura menor */
+  perspective: 1000px;
+  margin-bottom: 20px; 
+ 
+}
+
+.cartao-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.cartao-front, .cartao-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  padding: 20px;
+  backface-visibility: hidden;
+  background: linear-gradient(135deg, #0f3460, #533483);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.cartao-back {
+  transform: rotateY(180deg);
+}
+
+.linha-magnetica {
+  background: black;
+  height: 50px;
+  margin: 20px 0;
+}
+
+.cvv {
+  text-align: right;
+  margin-top: 40px;
+}
+
+/* Formulário */
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+input {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+button {
+  padding: 14px;
+  background: #e94560;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background: #ff2e63;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .cartao {
+    height: 200px;
+  }
+  .cartao-front h3 {
+    font-size: 18px;
+  }
+  .cartao-front p, .cartao-back p {
+    font-size: 14px;
+  }
+  input, button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

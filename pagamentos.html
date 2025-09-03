@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Pagamento</title>
+  <link rel="stylesheet" href="static/css/pagamentos.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Cartão -->
+    <div class="cartao">
+      <div class="cartao-inner" id="cartao">
+        <div class="cartao-front">
+          <h3 id="numero-cartao">#### #### #### ####</h3>
+          <p id="nome-cartao">NOME NO CARTÃO</p>
+          <p id="validade-cartao">MM/AA</p>
+        </div>
+        <div class="cartao-back">
+          <div class="linha-magnetica"></div>
+          <p class="cvv">CVV: <span id="cvv-cartao">###</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulário -->
+    <form class="inputs">
+      <input type="text" maxlength="19" placeholder="Número do Cartão" oninput="atualizarNumero(this.value)">
+      <input type="text" placeholder="Nome no Cartão" oninput="atualizarNome(this.value)">
+      <input type="text" maxlength="5" placeholder="Validade (MM/AA)" oninput="atualizarValidade(this.value)">
+      <input type="text" maxlength="3" placeholder="CVV" 
+             onfocus="virarCartao(true)" onblur="virarCartao(false)" 
+             oninput="atualizarCVV(this.value)">
+      <button type="submit">Pagar</button>
+    </form>
+  </div>
+
+  <script src="static/Js/pagamentos.js"></script>
+</body>
+</html>
