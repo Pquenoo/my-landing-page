@@ -19,7 +19,6 @@ function virarCartao(tras) {
   cartao.style.transform = tras ? "rotateY(180deg)" : "rotateY(0deg)";
 }
 
-
 // script.js
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
