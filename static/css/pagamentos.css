@@ -36,7 +36,7 @@ body {
   max-width: 360px;
   height: 220px;
   border-radius: 14px;
-   background-image: url("static/img/bg.png");
+   background-image: url("/bg.png");
   background-size: cover;
   padding: 25px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
@@ -93,7 +93,7 @@ h5.name {
   width: 100%;
   height: 100%;
   border-radius: 28px;
-  background-image: url("static/img/bg.png");
+  background-image: url("/bg.png");
   
   backface-visibility: hidden;
   transform: rotateY(180deg);
