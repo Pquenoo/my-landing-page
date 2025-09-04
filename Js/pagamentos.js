@@ -1,3 +1,4 @@
+// Atualização do cartão físico
 function atualizarNumero(valor) {
   document.getElementById("numero-cartao").innerText = valor || "#### #### #### ####";
 }
@@ -19,7 +20,7 @@ function virarCartao(tras) {
   cartao.style.transform = tras ? "rotateY(180deg)" : "rotateY(0deg)";
 }
 
-// script.js
+// Canvas de moedas
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
@@ -48,3 +49,44 @@ function animar() {
   requestAnimationFrame(animar);
 }
 animar();
+
+// Seletores
+const cardInput = document.getElementById("cardNumber");
+const brandDisplay = document.getElementById("cardBrand");
+const cardLogo = document.getElementById("cardLogo");         // logo do cartão físico
+const cardBrandInput = document.getElementById("cardBrandInput"); // logo dentro do input
+
+// Função para detectar bandeira
+function detectCardBrand(number) {
+  number = number.replace(/\D/g, "");
+  if (/^4/.test(number)) return "Visa";
+  if (/^5[1-5]/.test(number)) return "MasterCard";
+  if (/^3[47]/.test(number)) return "American Express";
+  if (/^(636368|438935|504175|451416|509048)/.test(number)) return "Elo";
+  return "---";
+}
+
+// Mapeamento de logos
+const brandLogos = {
+  "Visa": "img/master.png",
+  "MasterCard": "img/master.png",
+  "American Express": "img/amex.png",
+  "Elo": "img/elo.png",
+  "---": "img/cartão-logo.png" // logo padrão
+};
+
+// Evento de input
+cardInput.addEventListener("input", () => {
+  let value = cardInput.value.replace(/\D/g, "");
+
+  // Formatar em blocos de 4 dígitos
+  cardInput.value = value.replace(/(\d{4})(?=\d)/g, "$1 ");
+
+  // Detectar bandeira
+  const brand = detectCardBrand(value);
+  brandDisplay.textContent = "Bandeira: " + brand;
+
+  // Atualizar logos
+  cardLogo.src = brandLogos[brand];        // cartão físico
+  cardBrandInput.src = brandLogos[brand];  // dentro do input
+});

@@ -3,52 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página de Pagamento</title>
+  <title>Pagamento | Borba Tech</title>
   <link rel="stylesheet" href="css/pagamentos.css">
 </head>
 <body>
+ <!-- ================= NAV ================= -->
+    <nav class="">
+        <div class="title">
+                <h1>Borba Tech</h1>
+                 <p>soluções inteligentes para seu computador!</p>
+        </div>
+        <!-- Botão hambúrguer -->
+        <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('show')">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <ul>
+          <li><a href="index.html" class="menu-btn">Início</a></li>
+          <li><a href="pagamentos.html" class="menu-btn">Pagamentos</a></li>
+          <li><a href="sobre.html" class="menu-btn">Sobre nós</a></li>
+          <li><a href="login.html" class="menu-btn">Entrar</a></li>
+          <li><a href="cadastro.html" class="menu-btn">Cadastrar</a></li>
+        </ul>
+    </nav>
 
   <canvas id="bg"></canvas>
-
 
   <div class="container-principal">
 
     <!-- Cartão com novo design -->
     <div class="cartao" id="cartao">
-    
-    <!-- Cabeçalho com logo e chip -->
-    <header>
-      <span class="logo">
-        <img src="img/logo.png" alt="Logo Borba Tech">
-        <h5>Borba Tech Card</h5>
-      </span>
-      <img src="img/chip.png" alt="Chip do cartão" class="chip">
-    </header>
+      <header>
+        <span class="logo">
+          <img id="cardLogo" src="img/cartão-logo.png" alt="Logo do Cartão">
+          <h5>Borba Tech Card</h5>
+        </span>
+        <img src="img/chip.png" alt="" class="chip">
+      </header>
 
-    <!-- Detalhes do cartão -->
-    <div class="card-details">
-      <div class="name-number">
-        <h6>Card Number</h6>
-        <h5 class="number" id="numero-cartao">#### #### #### ####</h5>
-        <h5 class="name" id="nome-cartao">NOME NO CARTÃO</h5>
+      <div class="card-details">
+        <div class="name-number">
+          <h6>Número do Cartão</h6>
+          <h5 class="number" id="numero-cartao">#### #### #### ####</h5>
+          <h5 class="name" id="nome-cartao">NOME NO CARTÃO</h5>
+        </div>
+        <div class="valid-date">
+          <h6>Validade </h6>
+          <h5 id="validade-cartao">MM/AA</h5>
+        </div>
       </div>
-      <div class="valid-date">
-        <h6>Valid Thru</h6>
-        <h5 id="validade-cartao">MM/AA</h5>
+
+      <div class="back">
+        <div class="linha-magnetica"></div>
+        <p class="cvv">CVV: <span id="cvv-cartao">###</span></p>
       </div>
     </div>
-
-    <!-- Parte de trás do cartão -->
-    <div class="back">
-      <div class="linha-magnetica"></div>
-      <p class="cvv">CVV: <span id="cvv-cartao">###</span></p>
-    </div>
-
-  </div>
 
     <!-- Formulário -->
     <form class="inputs">
-      <input type="text" maxlength="19" placeholder="Número do Cartão" oninput="atualizarNumero(this.value)">
+      <!-- Campo do cartão com logo da bandeira dentro do input -->
+      <div class="input-card-wrapper" style="position: relative;">
+        <input type="text" id="cardNumber" maxlength="19" placeholder="Número do Cartão" oninput="atualizarNumero(this.value)">
+        <img id="cardBrandInput" src="img/logo.png" alt="Bandeira" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); width: 40px; height: auto;">
+      </div>
+
+      <!-- Bandeira em texto (opcional) -->
+      <div id="cardBrand">Bandeira: ---</div>
+      
       <input type="text" placeholder="Nome no Cartão" oninput="atualizarNome(this.value)">
       <input type="text" maxlength="5" placeholder="Validade (MM/AA)" oninput="atualizarValidade(this.value)">
       <input type="text" maxlength="3" placeholder="CVV" 
@@ -58,6 +81,8 @@
     </form>
 
   </div>
+
+  <!-- Script externo -->
   <script src="Js/pagamentos.js"></script>
 </body>
 </html>
