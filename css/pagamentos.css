@@ -110,17 +110,35 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 24px; /* espaçamento mais equilibrado */
+  
   width: 100%;
   max-width: 400px;
+  padding: 24px;
+  box-sizing: border-box;
+
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15); /* fundo translúcido */
+  backdrop-filter: blur(12px) saturate(150%); /* blur mais suave + cor mais viva */
+  -webkit-backdrop-filter: blur(12px) saturate(150%); /* compatibilidade Safari */
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* sombra mais elegante */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* Pequena interação ao passar o mouse */
+.container-principal:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
 
 /* Cartão */
 .cartao {
   position: relative;
   width: 100%;
   max-width: 360px;
-  height: 220px;
+  height: 236px;
   border-radius: 14px;
   padding: 25px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
@@ -308,4 +326,79 @@ button:hover {
   width: 100%;
   height: 100%;
   background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+}
+
+/* =================== Responsividade =================== */
+@media (max-width: 768px) {
+  /* Cartão um pouco menor e padding reduzido */
+  .cartao {
+    max-width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .card-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .back {
+    padding: 20px;
+  }
+
+  .linha-magnetica {
+    height: 40px;
+  }
+
+  header .chip {
+    width: 50px;
+  }
+
+  .logo img {
+    width: 40px;
+  }
+
+  h5.number {
+    font-size: 16px;
+  }
+  h5.name, h5 {
+    font-size: 14px;
+  }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+  .container-principal {
+    padding: 16px;
+    gap: 20px;
+  }
+
+  .cartao {
+    padding: 15px;
+    height: auto;
+  }
+
+  header, .card-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  h5.number {
+    font-size: 14px;
+  }
+  h5.name, h5 {
+    font-size: 12px;
+  }
+
+  input, button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .input-card-wrapper img {
+    width: 28px;
+  }
 }
