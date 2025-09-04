@@ -122,13 +122,24 @@ body {
   max-width: 360px;
   height: 220px;
   border-radius: 14px;
-  background-image:url("/img/bg.png");
-  background-size: cover;
   padding: 25px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   transform-style: preserve-3d;
   transition: transform 0.8s;
+
+  /* Fundo gradiente animado */
+  background: linear-gradient(-45deg, #4f4f50, #242324, #000000, #1b1c1d);
+  background-size: 400% 400%;
+  animation: gradienteAnim 15s ease infinite;
 }
+
+/* Animação do gradiente */
+@keyframes gradienteAnim {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 /* Header do cartão */
 header,
@@ -179,15 +190,39 @@ h5.name {
   width: 100%;
   height: 100%;
   border-radius: 28px;
-  background-image:url("/img/bg.png");
   backface-visibility: hidden;
   transform: rotateY(180deg);
   padding: 25px;
+
+  /* Fundo gradiente animado */
+  background: linear-gradient(-45deg,#4f4f50, #242324, #000000, #1b1c1d);
+  background-size: 400% 400%;
+  animation: gradienteAnimBack 15s ease infinite;
 }
+
+/* Animação do gradiente para o back */
+@keyframes gradienteAnimBack {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .linha-magnetica {
-  background: rgb(27, 27, 27);
   height: 50px;
   margin: 20px 0;
+  border-radius: 12px; /* opcional, deixa mais suave */
+
+  /* Fundo gradiente animado */
+  background: linear-gradient(-45deg, #4f4f50, #242324, #000000, #1b1c1d);
+  background-size: 400% 400%;
+  animation: gradienteAnimLinha 10s ease infinite;
+}
+
+/* Animação do gradiente para a linha */
+@keyframes gradienteAnimLinha {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 .cvv {
   text-align: right;
